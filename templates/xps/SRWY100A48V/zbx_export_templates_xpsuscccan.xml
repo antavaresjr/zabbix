@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2021-11-30T10:09:25Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template SNMP Retificadora XPS SRWY100A</template>
+            <name>Template SNMP Retificadora XPS SRWY100A</name>
+            <description>Template SNMP do Retificador XPS SRWY100A</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Configuração</name>
+                </application>
+                <application>
+                    <name>Monitor</name>
+                </application>
+                <application>
+                    <name>Reles</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>Atraso de Carga das Baterias Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.25.0</snmp_oid>
+                    <key>registerAtrasoBatCarga</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>ATRASO_BAT_CARGA, numero 7043. Permite especificar um valor entre 1 e 600 para o Atraso, em minutos, do modo de Carga das Baterias em  eu valor padrao e 5. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Carga Automática Status</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.32.4.0</snmp_oid>
+                    <key>registerConfig1CargaAutom</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>CARGA_AUTOM e um subregistro do CONFIG1, numero 7049. Permite leitura e escrita do bit 4, Carga_Automatica. Sendo um valor verdadeiro (1) ou falso (0). Seu valor padrao e 1.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Compensação de Temperatura Status</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.32.5.0</snmp_oid>
+                    <key>registerConfig1CompTemp</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>COMP_TEMP e um subregistro do CONFIG1, numero 7050. Permite leitura e escrita de bit 5, Compensacao de Temperatura. Sendo  verdadeiro (1/ligado) ou falso (0/desligado). Seu valor padrao e falso.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Limite de Corrente Carga Status</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.32.3.0</snmp_oid>
+                    <key>registerConfig1LimCorrCarga</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>LIM_CORR_CARGA e um subregistro do CONFIG1, numero 7049. Permite leitura e escrita do bit 3, Limite de Corrente Carga. Sendo verdadeiro (1/ligado) ou falso (0/desligado). Seu valor padrao e 1.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tipo de Entrada CA Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.32.1.0</snmp_oid>
+                    <key>registerConfig1TipEntradaCa</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>TIP_ENTRADA_CA e um subregistro do CONFIG1, numero 7049. Permite leitura e escrita do bit 0, Tipo de Entrada CA. Sendo verdadeiro (1/trifasico) ou falso (0/monofasico). Seu valor padrao e 1.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Fusível da Bateria</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.13.5.0</snmp_oid>
+                    <key>registerFusBateria</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>FUS_BATERIA e um subregistro do EN07, numero 1040. Permite acesso apenas para leitura do Fusivel Bateria e armazena um valor verdadeiro/normal (1) ou&#13;
+falso/aberto (0).</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Retificadora XPS Status Fusível</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Fusível do Consumidor</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.13.2.0</snmp_oid>
+                    <key>registerFusCons</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>FUS_CONS e um subregistro do EN07, numero 1040. Permite acesso apenas para leitura do Fusivel Consumidor e armazena um valor verdadeiro/normal (1) ou&#13;
+falso/aberto (0).</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Retificadora XPS Status Fusível</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Corrente de Carga da Bateria</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.8.0</snmp_oid>
+                    <key>registerIbatC</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <description>Registro IBATC, numero 1035. Permite acesso apenas para leitura da corrente de carga da bateria e armazena um valor inteiro positivo de 0 ate 4000. (Depende do valor configurado no parametro SHUNT DE BATERIA.)</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Corrente de Descarga da Bateria</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.9.0</snmp_oid>
+                    <key>registerIbatD</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <description>Registro IBATD, numero 1036. Permite acesso apenas para leitura da corrente de descarga da bateria e armazena um valor inteiro positivo de 0 ate 4000. (Depende do valor configurado no parametro SHUNT DE BATERIA.)</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Corrente dos Consumidores</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.7.0</snmp_oid>
+                    <key>registerIcons</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <description>Registro ICONS, numero 1034. Permite acesso apenas para leitura da corrente de consumidor e armazena um valor inteiro positivo de 0 ate 4000. (Depende do valor configurado no parametro SHUNT DE CONSUMIDOR.)</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Corrente da UR 1</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.1.1.1.0</snmp_oid>
+                    <key>registerIur1</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <description>Registro IUR1, numero 1000. Permite acesso apenas para leitura do valor da corrente da UR1 e armazena um valor inteiro positivo de 0 ate 1690</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Corrente da UR 2</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.1.1.2.0</snmp_oid>
+                    <key>registerIur2</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <description>Registro IUR2, numero 1001. Permite acesso apenas para leitura do valor da corrente da UR2 e armazena um valor inteiro positivo de 0 ate 1690</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Limite de Corrente de Carga para as Baterias Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.24.0</snmp_oid>
+                    <key>registerLimCorrCarga</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <description>LIM_CORR_CARGA, numero 7042. Permite especificar um valor entre 10 e 800 para o Limite de Corrente de Carga para as Baterias e seu valor padrao e 30. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Compensação da Tensão de Flutuação pela Temperatura Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.22.0</snmp_oid>
+                    <key>registerMvPorElemento</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>MV_POR_ELEMENTO, numero 7040. Permite especificar um valor entre 1 e 25 para o valor da Compensacao da Tensao  de Flutuacao pela Temperatura e valor padrao e 3. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Número de Elementos da Bateria Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.23.0</snmp_oid>
+                    <key>registerNumElementos</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>NUM_ELEMENTOS, numero 7041. Permite especificar um valor entre 10 a 30 para o Numero de Elementos da Bateria e seu valor padrao e 24. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>OFFSET Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.30.0</snmp_oid>
+                    <key>registerOffset</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <description>OFFSET, numero 7048. Permite especificar um valor entre 0 e 25 para ajuste do OFFSET seu valor padrao e 0. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Bateria em Carga</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.14.5.0</snmp_oid>
+                    <key>registerRlBatCarga</key>
+                    <delay>73s</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>RL_BAT_CARGA e um subregistro do SA07, numero 1042. Permite acesso apenas para leitura do Rele de Bateria em Carga e armazena um valor verdadeiro/ligado (1) ou falso/desligado (0).</description>
+                    <applications>
+                        <application>
+                            <name>Reles</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=1</expression>
+                            <name>Bateria em Carga em {HOST.NAME}</name>
+                            <priority>INFO</priority>
+                            <description>Relé de Bateria em Carga acionado.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Bateria Desconectada</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.14.6.0</snmp_oid>
+                    <key>registerRlBatDesco</key>
+                    <delay>73s</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>RL_BAT_DESCO e um subregistro do SA07, numero 1042. Permite acesso apenas para leitura do Rele de Bateria Desconectada e armazena um valor verdadeiro/ligado (1) ou falso/desligado (0).</description>
+                    <applications>
+                        <application>
+                            <name>Reles</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=1</expression>
+                            <name>Bateria Desconectada em {HOST.NAME}</name>
+                            <priority>DISASTER</priority>
+                            <description>Relé de Bateria Desconectada acionado.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Bateria em Descarga</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.14.3.0</snmp_oid>
+                    <key>registerRlBatDescrg</key>
+                    <delay>73s</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>RL_BAT_DESCRG e um subregistro do SA07, numero 1042. Permite acesso apenas para leitura do Rele de Bateria em Descarga e armazena um valor verdadeiro/ligado (1) ou falso/desligado (0).</description>
+                    <applications>
+                        <application>
+                            <name>Reles</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tensão CA Anormal</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.14.7.0</snmp_oid>
+                    <key>registerRlCaAnormal</key>
+                    <delay>73s</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>RL_CA_ANORMAL e um subregistro do SA07, numero 1042. Permite acesso apenas para leitura do Rele de Tensao CA Anormal e armazena um valor verdadeiro/ligado (1) ou falso/desligado (0).</description>
+                    <applications>
+                        <application>
+                            <name>Reles</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=1</expression>
+                            <name>Tensão CA Anormal em {HOST.NAME}</name>
+                            <priority>AVERAGE</priority>
+                            <description>Relé de Tensão CA Anormal acionado.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Tensão de Consumidor Alta</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.14.4.0</snmp_oid>
+                    <key>registerRlConsAlto</key>
+                    <delay>73s</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>RL_CONS_ALTO e um subregistro do SA07, numero 1042. Permite acesso apenas para leitura do Rele de Tensao de Consumidor Alta e armazena um valor verdadeiro/igado (1) ou falso/desligado (0).</description>
+                    <applications>
+                        <application>
+                            <name>Reles</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=1</expression>
+                            <name>Tensão de Consumidor Alta em {HOST.NAME}</name>
+                            <priority>AVERAGE</priority>
+                            <description>Relé de Tensão de Consumidor Alta acionado.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>UR em Falha</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.14.1.0</snmp_oid>
+                    <key>registerRlFalhaUr</key>
+                    <delay>73s</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>RL_FALHA_UR e um subregistro do SA07, numero 1042. Permite acesso apenas para leitura do Rele de Falha de UR e armazena um valor verdadeiro/ligado (1) ou falso/desligado(0).</description>
+                    <applications>
+                        <application>
+                            <name>Reles</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Fusivel Aberto</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.14.2.0</snmp_oid>
+                    <key>registerRlFusAberto</key>
+                    <delay>73s</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <description>RL_FALHA_UR e um subregistro do SA07, numero 1042. Permite acesso apenas para leitura do Rele de Falha de UR e armazena um valor verdadeiro/ligado (1) ou falso/desligado(0).</description>
+                    <applications>
+                        <application>
+                            <name>Reles</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>BOOL_TO_DECIMAL</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=1</expression>
+                            <name>Disjuntor/Fusível Aberto em {HOST.NAME}</name>
+                            <priority>AVERAGE</priority>
+                            <description>Relé de Fusível Aberto acionado.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Bateria em Descarga Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.5.0</snmp_oid>
+                    <key>registerSpBatDescarga</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_BAT_DESCARGA, numero 7023. Permite especificar um valor entre 4600 e 4950 para o ponto de atuacao da Bateria em Descarga e seu valor padrao e 4920. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tensão CA Alta Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.9.0</snmp_oid>
+                    <key>registerSpCaAlta</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_CA_ALTA, numero 7027. Permite especificar um valor entre 1940 e 2900 para o ponto de atuacao da Tensao CA Alta e seu valor padrao e 2640. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tensão CA Baixa Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.8.0</snmp_oid>
+                    <key>registerSpCaBaixa</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_CA_BAIXA, numero 7026. Permite especificar um valor entre 1580 e 2380 para o ponto de atuacao da Tensao  CA Baixa e seu valor padrao e 1870. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tensão Alta Consumidor Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.4.0</snmp_oid>
+                    <key>registerSpConsAlta</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_CONS_ALTA, numero 7022. Permite especificar um valor entre 5200 e 5600 para o ponto de atuacao da Tensao Alta Consumidor  seu valor padrao e 5880. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Desconexão de Bateria CC1 Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.6.0</snmp_oid>
+                    <key>registerSpDescoCc1</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_DESCO_CC1, numero 7024. Permite especificar um valor entre 3800 e 4400 para&#13;
+o ponto de atuacao de Desconexao de Bateria e seu valor padrao e 4200. Seu tipo&#13;
+de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Desconexão de Bateria CC2 Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.7.0</snmp_oid>
+                    <key>registerSpDescoCc2</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_DESCO_CC1, numero 7024. Permite especificar um valor entre 3800 e 4400 para&#13;
+o ponto de atuacao de Desconexao de Bateria e seu valor padrao e 4200. Seu tipo&#13;
+de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Corrente Crítica de Baterias Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.12.0</snmp_oid>
+                    <key>registerSpICriticaBat</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>A</units>
+                    <description>SP_ICRITICA_BAT, numero 7030. Permite especificar um valor entre 4 e 880 para o ponto de atuacao da Corrente Critica de Baterias  e seu valor padrao e 100. Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tensão de Carga Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.11.0</snmp_oid>
+                    <key>registerSpVCarga</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_VCARGA, numero 7029. Permite especificar um valor entre 4600 e 6000 para a Tensao de Carga  e seu valor padrao e 54.Seu tipo de acesso permite leitura e escrita.</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tensão de Flutuação Config</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.3.10.0</snmp_oid>
+                    <key>registerSpVFlut</key>
+                    <delay>1d</delay>
+                    <history>1w</history>
+                    <trends>1w</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>SP_VFLUT, numero 7028. Permite especificar um valor entre 4450 e 5800 para a Tensao de Flutuacao  e seu valor padrao e 5400. Seu tipo de acesso permite leitura e escrita</description>
+                    <applications>
+                        <application>
+                            <name>Configuração</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Temperatura Baterias 1</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.10.0</snmp_oid>
+                    <key>registerTemp1</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>C</units>
+                    <description>Registro TEMP1, numero 1037. Permite acesso apenas para leitura, em graus celsius, do sensor de temperadura das baterias e armazena um valor inteiro positivo de 0 ate 999.</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Temperatura Baterias 2</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.11.0</snmp_oid>
+                    <key>registerTemp2</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>C</units>
+                    <description>Registro TEMP2, numero 1038. Permite acesso apenas para leitura, em graus celsius, do sensor de temperadura das baterias e armazena um valor inteiro positivo de 0 ate 999.</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.1</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+                <item>
+                    <name>Tensão da Bateria</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.6.0</snmp_oid>
+                    <key>registerVbat</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>Registro VBATE, numero 1032. Permite acesso apenas para leitura da tensão de bateria e armazena um valor inteiro positivo de 0 ate 6500.</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;45</expression>
+                            <name>{HOST.NAME} Tensão Crítica das Baterias</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Tensão de Entrada</name>
+                    <type>SNMPV2</type>
+                    <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                    <snmp_oid>iso.3.6.1.4.1.34252.4.1.5.0</snmp_oid>
+                    <key>registerVcc</key>
+                    <delay>2m</delay>
+                    <history>1w</history>
+                    <trends>180d</trends>
+                    <value_type>FLOAT</value_type>
+                    <units>V</units>
+                    <description>Registro VCC, numero 1031. Permite acesso apenas para leitura da tensao de flutuacao e armazena um valor inteiro positivo de 0 ate 6500.</description>
+                    <applications>
+                        <application>
+                            <name>Monitor</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>0.01</params>
+                        </step>
+                    </preprocessing>
+                    <request_method>POST</request_method>
+                </item>
+            </items>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template SNMP Retificadora XPS:registerRlBatDescrg.last()}=1 or {Template SNMP Retificadora XPS:registerIbatD.last()}&gt;{Template SNMP Retificadora XPS:registerIbatC.last()}</expression>
+            <name>Bateria em Descarga em {HOST.NAME}</name>
+            <priority>AVERAGE</priority>
+            <description>Relé de Bateria em Descarga acionado.</description>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Retificadora XPS:registerRlFalhaUr.last()}=1 and {Template SNMP Retificadora XPS:registerIur1.last()}=0 and  {Template SNMP Retificadora XPS:registerIur2.last()}&gt;0</expression>
+            <name>Falha UR1 em {HOST.NAME}</name>
+            <priority>AVERAGE</priority>
+            <description>Relé de Falha de UR acionado, UR1 sem corrente e UR2 com corrente.</description>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Retificadora XPS:registerRlFalhaUr.last()}=1 and {Template SNMP Retificadora XPS:registerIur2.last()}=0 and {Template SNMP Retificadora XPS:registerIur1.last()}&gt;0</expression>
+            <name>Falha UR2 em {HOST.NAME}</name>
+            <priority>AVERAGE</priority>
+            <description>Relé de Falha de UR acionado, UR2 sem corrente e UR1 com corrente.</description>
+        </trigger>
+        <trigger>
+            <expression>(({Template SNMP Retificadora XPS:registerTemp1.last(3)}&gt;=35 and {Template SNMP Retificadora XPS:registerTemp1.last(3)}&lt;40) or ({Template SNMP Retificadora XPS:registerTemp1.last(3)}&lt;14 and {Template SNMP Retificadora XPS:registerTemp1.last(3)}&gt;0)) or (({Template SNMP Retificadora XPS:registerTemp2.last(3)}&gt;=35 and {Template SNMP Retificadora XPS:registerTemp2.last(3)}&lt;40) or ({Template SNMP Retificadora XPS:registerTemp2.last(3)}&lt;14 and {Template SNMP Retificadora XPS:registerTemp2.last(3)}&gt;0))</expression>
+            <name>Temperatura Anormal das Baterias</name>
+            <priority>WARNING</priority>
+            <description>Temperatura das baterias fora do range de 14 a 35 graus celsius.</description>
+        </trigger>
+        <trigger>
+            <expression>{Template SNMP Retificadora XPS:registerTemp1.last(3)}&gt;=40 or {Template SNMP Retificadora XPS:registerTemp2.last(3)}&gt;=40</expression>
+            <name>Temperatura Crítica das Baterias</name>
+            <priority>AVERAGE</priority>
+            <description>Temperatura das baterias acima de 40 graus celsius.</description>
+        </trigger>
+    </triggers>
+    <graphs>
+        <graph>
+            <name>Corrente das URs</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMP Retificadora XPS</host>
+                        <key>registerIur1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>0000EE</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>Template SNMP Retificadora XPS</host>
+                        <key>registerIur2</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Corrente dos Consumidores X Corrente das Baterias</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>0000CC</color>
+                    <item>
+                        <host>Template SNMP Retificadora XPS</host>
+                        <key>registerIcons</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>009900</color>
+                    <item>
+                        <host>Template SNMP Retificadora XPS</host>
+                        <key>registerIbatC</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>EE0000</color>
+                    <item>
+                        <host>Template SNMP Retificadora XPS</host>
+                        <key>registerIbatD</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Tensão de Entrada X Tensão das Baterias</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <color>007700</color>
+                    <item>
+                        <host>Template SNMP Retificadora XPS</host>
+                        <key>registerVcc</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>0000BB</color>
+                    <item>
+                        <host>Template SNMP Retificadora XPS</host>
+                        <key>registerVbat</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
+    <value_maps>
+        <value_map>
+            <name>Retificadora XPS Status Fusível</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Aberto</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Normal</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>Service state</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Up</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
